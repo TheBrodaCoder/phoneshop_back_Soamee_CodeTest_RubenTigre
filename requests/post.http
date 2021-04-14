@@ -3,13 +3,13 @@ Content-Type: application/json
 
 
     {   
-        "name": "iPhone 9",
-        "manufacturer": "Apple",
+        "name": "Huawei P30 Pro",
+        "manufacturer": "Huawei",
         "description": "lorem ipsum dolor sit amet consectetur",
-        "color": "pink",
-        "price": 1049,
-        "imageFileName": "iPhone_9.png",
-        "screen": "6 inch IPS",
-        "processor": "A20 Fusion",
+        "color": "Black",
+        "price": 330,
+        "imageFileName": "huawei_P30.jpg",
+        "screen": "6.1 inch OLED",
+        "processor": "Kirin 980",
         "ram": 6
     }
