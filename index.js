@@ -2,13 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const lowDb = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-const e = require('express');
+
 
 
 const db = lowDb(new FileSync('phones.json'));
 
 
 const app = express();
+app.use(express.static('build'));
+app.use(express.static('phonepics'));
 app.use(cors());
 app.use(express.json());
 

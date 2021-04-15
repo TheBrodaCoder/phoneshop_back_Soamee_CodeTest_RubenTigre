@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../../fullstack_code_soamee_ruben_tigre/phoneshop_front && npm run build --prod && cp -r build ../../fullstack_code_soamee_ruben_tigre/phoneshop_back"
+
   },
   "author": "",
   "license": "ISC",
