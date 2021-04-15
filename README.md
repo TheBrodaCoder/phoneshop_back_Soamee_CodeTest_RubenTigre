@@ -7,6 +7,7 @@ i can.
 I added some scripts to improve some of the tedious task, like add the build folder.
 
 We have:
+
   npm start: 
     
     execute node index.js.
@@ -19,11 +20,25 @@ Be sure both, Front and Back, are on the same folder or the buil:ui script will 
 Also, the app is configured to work with Heroku.
 I added some npm scripts to make this easier.
 We have:
-  "deploy": push current git to Heroku.
-  "deploy:full": create an updated build and then push it to Heroku.
-  "logs:prod":  logs of Heroku.
-  "open:prod": scale our dynos to 1 and open in the browser.
-  "stop:prod" : scale our dynos to 0 to stop.
+
+  "deploy": 
+  
+    push current git to Heroku.
+  "deploy:full": 
+     
+     create an updated build and then push it to Heroku.
+  
+  "logs:prod":  
+  
+    logs of Heroku.
+  
+  "open:prod": 
+  
+    scale our dynos to 1 and open in the browser.
+  
+  "stop:prod" : 
+  
+    scale our dynos to 0 to stop.
   
 //about the API:
 
