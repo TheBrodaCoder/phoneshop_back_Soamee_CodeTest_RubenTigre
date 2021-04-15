@@ -7,8 +7,12 @@ i can.
 I added some scripts to improve some of the tedious task, like add the build folder.
 
 We have:
-  npm start: execute node index.js;
-  npm run build:ui: deletes current Build folder, then navigate to the Front folder to use the script to generate a new build, finally it copies it on our back.
+  npm start: 
+    
+    execute node index.js.
+  npm run build:ui: 
+  
+    deletes current Build folder, then navigate to the Front folder to use the script to generate a new build, finally it copies it on our back.
 
 Be sure both, Front and Back, are on the same folder or the buil:ui script will fail.
 
