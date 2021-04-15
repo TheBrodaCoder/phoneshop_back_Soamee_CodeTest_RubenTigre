@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build:ui": "rm -rf build && cd ../../fullstack_code_soamee_ruben_tigre/phoneshop_front && npm run build --prod && cp -r build ../../fullstack_code_soamee_ruben_tigre/phoneshop_back"
+    "build:ui": "rm -rf build && cd ../../fullstack_code_soamee_ruben_tigre/phoneshop_front && npm run build --prod && cp -r build ../../fullstack_code_soamee_ruben_tigre/phoneshop_back",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
+    "logs:prod": "heroku logs --tail",
+    "open:prod": "heroku ps:scale web=1 && heroku open",
+    "stop:prod" : "heroku ps:scale web=0"
 
   },
   "author": "",
