@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const lowDb = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const e = require('express');
 
 
 
@@ -91,6 +92,39 @@ app.delete('/phones/:id', (req, res) => {
     }
 })
 
-const PORT = 3001;
+app.put('/phones/:id', (req,res) => {
+    if (req.params.id) {
+        let id = Number(req.params.id);
+        let phones = db.get('phones').value();
+        let searched = phones.find(phone => phone.id === id);
+        if (searched) {
+            const updatedPhone = {
+                id: id,
+                name: req.body.name ? req.body.name : searched.name,
+                manufaturer: req.body.manufacturer ? req.body.manufacturer : searched.manufacturer,
+                description: req.body.description ? req.body.description : searched.description,
+                price: req.body.price ? req.body.price : searched.description,
+                color: req.body.color ? req.body.color : searched.color,
+                imageFileName: req.body.imageFileName ? req.body.imageFileName : searched.imageFileName,
+                screen: req.body.screen ? req.body.screen : searched.screen,
+                processor: req.body.processor ? req.body.processor : searched.processor,
+                ram: req.body.ram ? req.body.ram : searched.ram
+            }
+            if (JSON.stringify(searched) === JSON.stringify(updatedPhone)) {
+                res.status(400).json({error: 'Request to update with no changes of phone or didnt add the object'})
+            } else {
+                db.get('phones').find({id: id}).assign(updatedPhone).write()
+                res.json({sucess: true})
+            }
+        } else {
+            res.status(404).json({error: 'Requested id didnt exist'})
+        }
+    
+    } else {
+        res.status(400).json({error: "Bad request, required id"})
+    }
+})
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)

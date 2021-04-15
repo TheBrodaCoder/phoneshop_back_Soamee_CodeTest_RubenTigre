@@ -118,7 +118,8 @@
       "imageFileName": "nokia_3310.jpg",
       "screen": "2.4 inch",
       "processor": "Aparently it hasn't processor...",
-      "ram": 512
+      "ram": 512,
+      "manufaturer": "Nokia"
     },
     {
       "id": 10,
