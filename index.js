@@ -20,7 +20,7 @@ const getMaxId = () => {
 }
 
 //manage GET request to /phones, return the entire phones array.
-app.get('/api/phones', (req, res) => {
+app.get('/phones', (req, res) => {
     const phones = db.get('phones').value();
     if (phones) {
         res.json(phones)
@@ -31,7 +31,7 @@ app.get('/api/phones', (req, res) => {
 })
 
 //manage POST requests to /phones, adding the object requested only if has all the needed params.
-app.post('/api/phones', (req, res) => {
+app.post('/phones', (req, res) => {
     if (req.body.name && req.body.manufacturer && req.body.description
         && req.body.price && req.body.color && req.body.imageFileName
         && req.body.screen && req.body.processor && req.body.ram) {
@@ -55,7 +55,7 @@ app.post('/api/phones', (req, res) => {
 })
 
 //Manage requests for an id.
-app.get('/api/phones/:id', (req, res) => {
+app.get('/phones/:id', (req, res) => {
     if (req.params.id) {
         let id = Number(req.params.id);
         let phones = db.get('phones').value();
@@ -73,7 +73,7 @@ app.get('/api/phones/:id', (req, res) => {
 })
 
 //Manage delete request, filter if that id exist or if didnt get an id
-app.delete('/api/phones/:id', (req, res) => {
+app.delete('/phones/:id', (req, res) => {
     if (req.params.id) {
         let id = Number(req.params.id);
         let phones = db.get('phones').value();
