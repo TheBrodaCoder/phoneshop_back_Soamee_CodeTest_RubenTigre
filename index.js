@@ -125,6 +125,11 @@ app.put('/phones/:id', (req,res) => {
     }
 })
 
+
+app.get('*', (req, res) => {
+    res.status(404).end();
+  })
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
