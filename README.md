@@ -56,19 +56,21 @@ Keep in mind our react app is a Single Page App and we use React Router to manag
     
   DELETE /phones/:id :
   
-    Search for an especific phone with ID that match the params of the request. If the id is not added, it will return a bad request. If that id are undefined, a 404 status.
-    Finally, if it exist, that object will be returned and deleted.
+    Search for an especific phone with ID that match the params of the request. If the id is not added, it will return a bad request. 
+    If that id are undefined, a 404 status. Finally, if it exist, that object will be returned and deleted.
   
   POST /phones/ :
   
-    In case we need to add a new phone to our database, we can make a Post Request with an object. In case there is no object, this will return a bad request.
-    In case there is any missed entry on the object, this also will return a bad request. Finally if all the entries exist, it will add an id to the object and
+    In case we need to add a new phone to our database, we can make a Post Request with an object. 
+    In case there is no object, this will return a bad request.
+    In case there is any missed entry on the object, this also will return a bad request.
+    Finally if all the entries exist, it will add an id to the object and
     write it to the JSON file.
     
   PUT /phones/:id :
   
-    In case we need to update any entry of any of our phone objects, we can make a PUT request with the id we want to change. In this case, it will return a bad request in case
-    the id is not added or if no one of the entries of the targeted phone are changed.
-    In case the id is not undefined on our database, we will construct a new object with the new data of the entries or the current one if there is no change.
-    Then we will save it only if there is any change.
+    In case we need to update any entry of any of our phone objects, we can make a PUT request with the id we want to change. 
+    In this case, it will return a bad request in case the id is not added or if no one of the entries of the targeted phone are changed.
+    In case the id is not undefined on our database, we will construct a new object with the new data of the entries
+    or the current one if there is no change. Then we will save it only if there is any change.
   
